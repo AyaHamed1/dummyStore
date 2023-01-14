@@ -1,8 +1,8 @@
 part of 'HomeWidgetsImports.dart';
 
-class BuildHomeSearch extends StatelessWidget {
+class BuildHomeTitle extends StatelessWidget {
   final HomeData homeData;
-  const BuildHomeSearch({Key? key, required this.homeData}) : super(key: key);
+  const BuildHomeTitle({Key? key, required this.homeData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,22 +24,12 @@ class BuildHomeSearch extends StatelessWidget {
               )
             ]
         ),
-        child: TextFormField(
-          controller: homeData.search,
-          decoration: InputDecoration(
-            hintText: "Search",
-            enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.transparent),
-            ),
-            focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.transparent),
-            ),
-            prefixIcon: Icon(
-              Icons.search,
-              color: MyColors.primary,
-            ),
-          ),
-          onChanged: (v)=> homeData.onSearch(context, v),
+        child: MyText(
+          title: "Your Fashion Destination",
+          color: MyColors.grey,
+          size: 23,
+          overflow: TextOverflow.clip,
+          fontFamily: GoogleFonts.tangerine().fontFamily,
         ),
       ),
     );

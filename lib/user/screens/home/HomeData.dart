@@ -43,12 +43,4 @@ class HomeData {
     }
   }
 
-  void onSearch(BuildContext context, String value) async {
-    if (value.isEmpty) {
-      fetchPage(1, context);
-    } else {
-      productList.where((e) => e.title.contains(value)).toList();
-      pagingController.refresh();
-    }
-  }
 }

@@ -21,6 +21,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColors.secondary,
       body: Center(
         child: AnimationContainer(
           index: 0,
@@ -31,8 +32,8 @@ class _SplashState extends State<Splash> {
             tag: Res.logo,
             child: Image.asset(
               Res.logo,
-              width: 150,
-              height: 150,
+              width: MediaQuery.of(context).size.width * 0.7,
+              height: 250,
             ),
           ),
         ),

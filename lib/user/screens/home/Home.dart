@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
             children: [
               Container(height: MediaQuery.of(context).size.height * .25),
               const BuildHomeAppBar(),
-              BuildHomeSearch(homeData: homeData),
+              BuildHomeTitle(homeData: homeData),
             ],
           ),
           Flexible(

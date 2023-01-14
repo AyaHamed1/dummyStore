@@ -14,5 +14,5 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../../res.dart';
 
 part 'BuildHomeAppBar.dart';
-part 'BuildHomeSearch.dart';
+part 'BuildHomeTitle.dart';
 part 'BuildProductItem.dart';
