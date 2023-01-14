@@ -9,6 +9,7 @@ class Cart extends StatefulWidget {
 
 class _CartState extends State<Cart> {
   CartData cartData = CartData();
+
   @override
   void initState() {
     cartData.getTotal(context);
@@ -33,10 +34,11 @@ class _CartState extends State<Cart> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 20, right: 20, left: 20),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
                   child: InkWell(
-                    child: MyText(
+                    onTap: () => cartData.deleteAll(context),
+                    child: const MyText(
                       title: "Delete All",
                       color: Colors.red,
                       size: 12,
@@ -46,8 +48,8 @@ class _CartState extends State<Cart> {
                 Flexible(
                   child: AnimationLimiter(
                     child: ListView.builder(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
                       itemCount: state.products.length,
                       itemBuilder: (BuildContext context, int index) {
                         return AnimationConfiguration.staggeredList(

@@ -22,4 +22,13 @@ class CartData {
     // update total
     getTotal(context);
   }
+
+  deleteAll(BuildContext context){
+    var cartList = context.read<CartCubit>().state.products;
+    cartList.removeRange(0, cartList.length);
+    context.read<CartCubit>().onUpdateCartData(cartList);
+    // update total
+    totalBloc.onUpdateData(0);
+  }
+
 }
