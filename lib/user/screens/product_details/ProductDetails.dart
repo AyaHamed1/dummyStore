@@ -16,7 +16,10 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.white,
-      appBar: const DefaultAppBar(title: "Product Details"),
+      appBar: const DefaultAppBar(
+        title: "Product Details",
+        showCart: true,
+      ),
       body: Column(
         children: [
           BuildProductImage(url: widget.model.image),
