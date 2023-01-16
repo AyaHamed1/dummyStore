@@ -20,10 +20,10 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const DefaultAppBar(title: "Cart"),
-      body: BlocBuilder<CartCubit, CartState>(
-        builder: (_, state) {
+      body: Consumer<CartProvider>(
+        builder: (_, data, child) {
           return Visibility(
-            visible: state.products.isNotEmpty,
+            visible: data.products.isNotEmpty,
             replacement: Center(
               child: MyText(
                 title: "Your cart is empty ..",
@@ -50,7 +50,7 @@ class _CartState extends State<Cart> {
                     child: ListView.builder(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 15, vertical: 10),
-                      itemCount: state.products.length,
+                      itemCount: data.products.length,
                       itemBuilder: (BuildContext context, int index) {
                         return AnimationConfiguration.staggeredList(
                           position: index,
@@ -59,7 +59,7 @@ class _CartState extends State<Cart> {
                             verticalOffset: 50.0,
                             child: FadeInAnimation(
                               child: BuildCartItem(
-                                model: state.products[index],
+                                model: data.products[index],
                                 index: index,
                                 cartData: cartData,
                               ),
@@ -75,7 +75,7 @@ class _CartState extends State<Cart> {
           );
         },
       ),
-      bottomNavigationBar: BuildCartTotal(cartData: cartData),
+      bottomNavigationBar: BuildCartTotal(),
     );
   }
 }

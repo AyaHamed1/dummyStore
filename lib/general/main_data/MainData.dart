@@ -14,12 +14,12 @@ class MainData {
     ),
   );
 
-  static List<BlocProvider>  providers(BuildContext context)=>[
-    BlocProvider<LangCubit>(
-      create: (BuildContext context)=> LangCubit()
+  static List<ChangeNotifierProvider>  providers(BuildContext context)=>[
+    ChangeNotifierProvider<CartProvider>(
+      create: (BuildContext context)=> CartProvider()
     ),
-    BlocProvider<CartCubit>(
-      create: (BuildContext context)=> CartCubit()
+    ChangeNotifierProvider<TotalProvider>(
+      create: (BuildContext context)=> TotalProvider()
     ),
   ];
 

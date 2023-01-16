@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:badges/badges.dart';
+import 'package:dummy_store/general/providers/cart_provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../blocs/cart_cubit/cart_cubit.dart';
 import '../routers/RouterImports.gr.dart';
 import 'MyColors.dart';
 import 'MyText.dart';
@@ -28,7 +28,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cartCount = context.watch<CartCubit>().state.products.length;
+    var cartCount = context.watch<CartProvider>().products.length;
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(

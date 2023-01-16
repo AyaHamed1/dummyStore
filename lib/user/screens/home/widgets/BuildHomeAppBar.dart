@@ -5,7 +5,7 @@ class BuildHomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cartCount = context.watch<CartCubit>().state.products.length;
+    var cartCount = context.watch<CartProvider>().products.length;
     return Container(
       height: MediaQuery.of(context).size.height * 0.21,
       decoration: BoxDecoration(

@@ -1,6 +1,4 @@
-import 'package:dummy_store/general/blocs/lang_cubit/lang_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyText extends StatelessWidget {
@@ -29,7 +27,6 @@ class MyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var lang = context.read<LangCubit>().state.locale.languageCode;
     return Text(
       title,
       textAlign: alien ?? TextAlign.start,
@@ -39,13 +36,9 @@ class MyText extends StatelessWidget {
           fontSize: size ?? 16,
           decoration: decoration ?? TextDecoration.none,
           fontWeight: fontWeight ??
-              (lang == "ar"
-                  ? FontWeight.w500
-                  : FontWeight.w600),
+              (FontWeight.w600),
           fontFamily: fontFamily ??
-              (lang == "ar"
-                  ? GoogleFonts.cairo().fontFamily
-                  : GoogleFonts.poppins().fontFamily)),
+              (GoogleFonts.poppins().fontFamily)),
       overflow: overflow,
     );
   }
